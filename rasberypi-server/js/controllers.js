@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-  
+
 .controller('ozoneRGBColorCtrl', function($scope) {
 
 })
