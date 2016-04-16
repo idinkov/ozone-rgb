@@ -10,14 +10,15 @@
     </ion-side-menu-content>
     <ion-side-menu side="left" id="side-menu21">
         <ion-header-bar class="bar-stable">
-            <div class="title">Control Type</div>
+            <div class="title">Ozone RGB Modes</div>
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
-                <ion-item ui-sref="controlType.colorList" menu-close="">Color List</ion-item>
-                <ion-item ui-sref="controlType.colorList" menu-close="">Color Picker</ion-item>
-                <ion-item ui-sref="controlType.colorPicker" menu-close="">Animation Selector</ion-item>
-                <ion-item ui-sref="controlType.partyMode" menu-close="">Party Mode</ion-item>
+                <ion-toggle toggle-class="toggle-positive" ng-checked="true" name="power">Power (12V)</ion-toggle>
+                <ion-item ui-sref="ozoneRGBModes.ozoneRGBColor" menu-close="">Color</ion-item>
+                <ion-item>Animation</ion-item>
+                <ion-item ui-sref="ozoneRGBModes.ozoneRGBAnimation" menu-close="">Party</ion-item>
+                <ion-item ui-sref="ozoneRGBModes.ozoneRGBAnimation" menu-close="">AmbiLight</ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>

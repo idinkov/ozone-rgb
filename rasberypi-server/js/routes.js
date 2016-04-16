@@ -10,43 +10,45 @@ angular.module('app.routes', [])
     
   
 
-      .state('controlType.colorList', {
-    url: '/page1',
+      .state('ozoneRGBModes.ozoneRGBColor', {
+    url: '/color',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/colorList.html',
-        controller: 'colorListCtrl'
+        templateUrl: 'templates/ozoneRGBColor.html',
+        controller: 'ozoneRGBColorCtrl'
       }
     }
   })
 
-  .state('controlType.colorPicker', {
-    url: '/page2',
+  .state('ozoneRGBModes.ozoneRGBAnimation', {
+    url: '/animation',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/colorPicker.html',
-        controller: 'colorPickerCtrl'
+        templateUrl: 'templates/ozoneRGBAnimation.html',
+        controller: 'ozoneRGBAnimationCtrl'
       }
     }
   })
 
-  .state('controlType.partyMode', {
-    url: '/party-mode',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/partyMode.html',
-        controller: 'partyModeCtrl'
-      }
-    }
+  .state('ozoneRGBParty', {
+    url: '/party',
+    templateUrl: 'templates/ozoneRGBParty.html',
+    controller: 'ozoneRGBPartyCtrl'
   })
 
-  .state('controlType', {
+  .state('ozoneRGBAmbiLight', {
+    url: '/page5',
+    templateUrl: 'templates/ozoneRGBAmbiLight.html',
+    controller: 'ozoneRGBAmbiLightCtrl'
+  })
+
+  .state('ozoneRGBModes', {
     url: '/side-menu21',
-    templateUrl: 'templates/controlType.html',
+    templateUrl: 'templates/ozoneRGBModes.html',
     abstract:true
   })
 
-$urlRouterProvider.otherwise('/side-menu21/page1')
+$urlRouterProvider.otherwise('/side-menu21/color')
 
   
 
