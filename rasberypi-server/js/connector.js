@@ -6,6 +6,22 @@ function connector_send( mode, action )
 	);
 }
 
+
+function connector_auto(action)
+{
+	connector_send('color',action);
+	
+	if( action == 10 )
+		action = 20;
+	else if ( action == 20 )
+		action = 30;
+	else if( action == 30)
+		action = 10;
+	
+	setTimeout('connector_auto('+action+');', 200);
+}
+
+
 var powerState = true;
 function togglePower()
 {
@@ -26,4 +42,9 @@ function togglePower()
 function toggleColor( action )
 {
 	connector_send( 'color', action );
+}
+
+function toggleParty()
+{
+	connector_send( 'party', 'beat' );
 }
