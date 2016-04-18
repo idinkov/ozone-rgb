@@ -36,15 +36,15 @@ function togglePower()
 		powerState = true;
 	}
 	
-	connector_send( 'power', action );
+	connector_send( 1, action );
 }
 
 function toggleColor( action )
 {
-	connector_send( 'color', action );
+	connector_send( 2, action );
 }
 
 function toggleParty()
 {
-	connector_send( 'party', 'beat' );
+	connector_send( 4, 1 );
 }
