@@ -27,12 +27,12 @@ function togglePower()
 {
 	if( powerState )
 	{
-		var action = "off";
+		var action = 1;
 		powerState = false;
 	}
 	else
 	{
-		var action = "on";
+		var action = 2;
 		powerState = true;
 	}
 	
