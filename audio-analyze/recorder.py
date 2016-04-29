@@ -15,8 +15,8 @@ class SwhRecorder:
     def __init__(self):
         """minimal garb is executed when class is loaded."""
         self.RATE=48100
-        self.BUFFERSIZE=64 #1024 is a good buffer size
-        self.secToRecord=.1
+        self.BUFFERSIZE=32 #1024 is a good buffer size
+        self.secToRecord=0.01
         self.threadsDieNow=False
         self.newAudio=False
         
@@ -80,18 +80,17 @@ class SwhRecorder:
     def fft(self,data=None,trimBy=10,logScale=False,divBy=100):
         if data==None: 
             data=self.audio.flatten()
+            
         left,right=numpy.split(numpy.abs(numpy.fft.fft(data)),2)
         ys=numpy.add(left,right[::-1])
         if logScale:
             ys=numpy.multiply(20,numpy.log10(ys))
-        xs=numpy.arange(self.BUFFERSIZE/2,dtype=float)
         if trimBy:
             i=int((self.BUFFERSIZE/2)/trimBy)
             ys=ys[:i]
-            xs=xs[:i]*self.RATE/self.BUFFERSIZE
         if divBy:
             ys=ys/float(divBy)
-        return xs,ys
+        return ys
     
     ### VISUALIZATION ###
     
