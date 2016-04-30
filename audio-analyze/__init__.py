@@ -16,9 +16,15 @@ def plotSomething( step ):
     
     SR.newAudio=False
     
-    if newys > 20000:
-        print newys
-        print step
+    data = urllib.urlencode({'level' : newys})
+    req = urllib2.Request("http://10.0.1.13/php/level.php", data)
+    res = urllib2.urlopen(req)
+    html =  res.read()
+    print html
+    
+    if newys > 80000:
+        #print newys
+        #print step
         
         if step == 0:
             req = urllib2.Request('http://10.0.1.13/php/beat.php')
@@ -37,7 +43,8 @@ if __name__ == "__main__":
             
         if plotSomething( step ):
             step = 1
-        else:
+        
+        if step != 0:
             step += 1
             if step == 4:
                 step = 0

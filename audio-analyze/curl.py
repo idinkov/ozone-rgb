@@ -1,4 +1,5 @@
 import urllib2
+import urllib
 
 class Curl:
     def onBeat(self):
