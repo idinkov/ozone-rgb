@@ -1,10 +1,11 @@
 <?php
+include("connector.php");
 
 $level = $_POST['level'];
 
-if( $level > 100000 )
+if( $level > 80000 )
     $level = 100;
 else 
-    $level = ceil( ($level / 100000) * 100 );
+    $level = ceil( ($level / 80000) * 100 );
 
-echo $level;
+Connector::send( 5, $level );
